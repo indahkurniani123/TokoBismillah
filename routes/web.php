@@ -27,3 +27,6 @@ Route::get('/home', function () {
 Route::get('/latihan', [LatihanController::class, 'home']);
 Route::get('/beranda', [LatihanController::class, 'beranda']);
 Route::get('/', [HomepageController::class, 'index']);
+Route::get('/about', [HomepageController::class, 'about']);
+Route::get('/kontak', [HomepageController::class, 'kontak']);
+Route::get('/kategori', [HomepageController::class, 'kategori']);

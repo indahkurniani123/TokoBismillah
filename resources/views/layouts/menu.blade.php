@@ -13,13 +13,16 @@
             <a class="nav-link active" aria-current="page" href="#">Produk</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Kategori</a>
+            <a class="nav-link" href="{{ URL::to('kategori') }}">Kategori</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Kontak</a>
+            <a class="nav-link" href="{{ URL::to('kontak') }}">Kontak</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Tentang Kami</a>
+            <a class="nav-link" href="{{ URL::to('about') }}">Tentang Kami</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
           </li>
 
 
@@ -28,10 +31,7 @@
             <a class="nav-link disabled"></a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Login</button>
-        </form>
+
       </div>
     </div>
   </nav>
