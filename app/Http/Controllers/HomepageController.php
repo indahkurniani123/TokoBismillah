@@ -28,4 +28,25 @@ class HomepageController extends Controller
         $data = array('title' => 'Halaman Kategori Produc');
         return view('homepage.kategori', $data);
     }
+
+    public function pendaftaran()
+    {
+        $title = 'Pendaftaran';
+        $text = 'Halaman Pendaftaran';
+        return view('mahsiswa.pendaftaran', compact('title', 'text'));
+    }
+
+    public function ujian()
+    {
+        $title = 'Ujian';
+        $text = 'Halaman Ujian';
+        return view('mahsiswa.ujian', compact('title', 'text'));
+    }
+
+    public function nilai()
+    {
+        $title = 'Nilai';
+        $text = 'Halaman Nilai';
+        return view('mahsiswa.nilai', compact('title','text'));
+    }
 }

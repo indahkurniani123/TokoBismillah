@@ -17,22 +17,59 @@ use App\Http\Controllers\KategoriController;
 |
 */
 
+Route::prefix('mahasiswa')->group(function () {
+
+    Route::get('pendaftaran', function () {
+        echo "<h2>Halaman Pendaftaran Mahasiswa</h2>";
+    });
+
+    Route::get('ujian', function () {
+        echo "<h2>Halaman Ujian Mahasiswa</h2>";
+    });
+
+    Route::get('nilai', function () {
+        echo "<h2>Halaman Nilai Mahasiswa</h2>";
+    });
+
+});
+
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
 
-Route::get('/latihan', [LatihanController::class, 'home']);
-Route::get('/beranda', [LatihanController::class, 'beranda']);
-Route::get('/', [HomepageController::class, 'index']);
-Route::get('/about', [HomepageController::class, 'about']);
-Route::get('/kontak', [HomepageController::class, 'kontak']);
-Route::get('/kategori', [HomepageController::class, 'kategori']);
-Route::get('/admin', [DashboardController::class, 'index']);
+// Route::get('/latihan', [LatihanController::class, 'home']);
+// Route::get('/beranda', [LatihanController::class, 'beranda']);
+// Route::get('/', [HomepageController::class, 'index']);
+// Route::get('/about', [HomepageController::class, 'about']);
+// Route::get('/kontak', [HomepageController::class, 'kontak']);
+// Route::get('/kategori', [HomepageController::class, 'kategori']);
+// Route::get('/admin', [DashboardController::class, 'index']);
+
+
+
+
+
+// Route::prefix('mahasiswa')->group(function () {
+
+//     Route::get('/', function () {
+//         return view('welcome');
+//     });
+//  Route::get('/pendaftaran', function () {
+//      return view('/pendaftaran' , 'pendaftaran');
+//  });
+
+// });
+
+
+
+
+
 
 //Kategori
 
