@@ -20,19 +20,27 @@ use App\Http\Controllers\KategoriController;
 Route::prefix('mahasiswa')->group(function () {
 
     Route::get('pendaftaran', function () {
-        echo "<h2>Halaman Pendaftaran Mahasiswa</h2>";
+        $title = 'Pendaftaran';
+        $text = 'Halaman Pendaftaran Mahasiswa  ';
+
+        return view('mahasiswa.index', compact('title', 'text'));
     });
 
     Route::get('ujian', function () {
-        echo "<h2>Halaman Ujian Mahasiswa</h2>";
+        $title = 'ujian';
+        $text = 'Halaman Ujian Mahasiswa ';
+
+        return view('mahasiswa.index', compact('title', 'text'));
     });
 
     Route::get('nilai', function () {
-        echo "<h2>Halaman Nilai Mahasiswa</h2>";
+        $title = 'Nilai';
+        $text = 'Halaman Nilai Mahasiswa ';
+
+        return view('mahasiswa.index', compact('title', 'text'));
     });
 
 });
-
 
 // Route::get('/', function () {
 //     return view('welcome');
