@@ -21,26 +21,27 @@ Route::prefix('mahasiswa')->group(function () {
 
     Route::get('pendaftaran', function () {
         $title = 'Pendaftaran';
-        $text = 'Halaman Pendaftaran Mahasiswa  ';
+        $text = 'Halaman Pendaftaran Mahasiswa';
 
         return view('mahasiswa.index', compact('title', 'text'));
     });
 
     Route::get('ujian', function () {
         $title = 'ujian';
-        $text = 'Halaman Ujian Mahasiswa ';
+        $text = 'Halaman Ujian Mahasiswa';
 
         return view('mahasiswa.index', compact('title', 'text'));
     });
 
     Route::get('nilai', function () {
         $title = 'Nilai';
-        $text = 'Halaman Nilai Mahasiswa ';
+        $text = 'Halaman Nilai Mahasiswa';
 
         return view('mahasiswa.index', compact('title', 'text'));
     });
 
 });
+
 
 // Route::get('/', function () {
 //     return view('welcome');
