@@ -16,31 +16,48 @@ use App\Http\Controllers\KategoriController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//  Route UTS vs Referens Bu Eka
+Route::group(['prefix' => '/mahasiswa', 'as'=> 'mahasiswa.'], function(){
+    Route::get('/pendaftaran', function(){
+        return 'Halaman Pendaftaran';
+    })->name('pendaftaran');
+    Route::get('/ujian', function(){
+        return 'Halaman Ujian';
+    })->name('ujian');
 
-Route::prefix('mahasiswa')->group(function () {
-
-    Route::get('pendaftaran', function () {
-        $title = 'Pendaftaran';
-        $text = 'Halaman Pendaftaran Mahasiswa';
-
-        return view('mahasiswa.index', compact('title', 'text'));
-    });
-
-    Route::get('ujian', function () {
-        $title = 'ujian';
-        $text = 'Halaman Ujian Mahasiswa';
-
-        return view('mahasiswa.index', compact('title', 'text'));
-    });
-
-    Route::get('nilai', function () {
-        $title = 'Nilai';
-        $text = 'Halaman Nilai Mahasiswa';
-
-        return view('mahasiswa.index', compact('title', 'text'));
-    });
+    Route::get('/nilai', function(){
+        return 'Halaman Nilai';
+    })->name('nilai');
 
 });
+Route::get('/mahasiswa', function(){
+    return view ('mahasiswa/index');
+});
+
+// Route::prefix('mahasiswa')->group(function () {
+
+//     Route::get('pendaftaran', function () {
+//         $title = 'Pendaftaran';
+//         $text = 'Halaman Pendaftaran Mahasiswa';
+
+//         return view('mahasiswa.index', compact('title', 'text'));
+//     });
+
+//     Route::get('ujian', function () {
+//         $title = 'ujian';
+//         $text = 'Halaman Ujian Mahasiswa';
+
+//         return view('mahasiswa.index', compact('title', 'text'));
+//     });
+
+//     Route::get('nilai', function () {
+//         $title = 'Nilai';
+//         $text = 'Halaman Nilai Mahasiswa';
+
+//         return view('mahasiswa.index', compact('title', 'text'));
+//     });
+
+// });
 
 
 // Route::get('/', function () {

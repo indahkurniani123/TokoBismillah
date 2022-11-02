@@ -46,7 +46,7 @@
                             </a>
                             <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-boxes"></i></div>
-                                Produk
+                                Kategori
                             </a>
                             <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
@@ -70,7 +70,8 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Dashboard</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item active">{{ $title }}</li>
+                            @yield('content')
                         </ol>
 
                     </div>
