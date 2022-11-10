@@ -11,4 +11,10 @@ class DashboardController extends Controller
         $data = array('tittle' => 'Dashboard');
         return view('dashboard.index', $data);
     }
+    // public function admin()
+    // {
+    //     $data = array('tittle' => 'Dashboard Admin');
+    //     return view('dashboard.admin', $data);
+    // }
+
 }
