@@ -9,8 +9,7 @@
 <h4 class="card-title">Kategori Produk</h4>
 <div class="card-tools">
 
-<a href="#" class="btn btn-sm btn-
-primary">
+<a href="{{ route('create.kategori') }}" class="btn btn-sm btn-primary">
 
 Baru
 </a>
@@ -50,7 +49,7 @@ Cari
         <tr>
         <td>1</td>
         <td>
-        <img src="{{ asset('images/slide1.jpg') }}" alt="kategori 1"
+        <img src="{{ asset('asset/image/gambar1.jpg') }}" alt="kategori 1"
         width='150px'>
         <div class="row mt-2">
         <div class="col">
@@ -77,7 +76,7 @@ Cari
         <tr>
         <td>2</td>
         <td>
-        <img src="{{ asset('images/slide1.jpg') }}" alt="kategori 1"
+        <img src="{{ asset('asset/image/gambar2.jpg') }}" alt="kategori 1"
         width='150px'>
         <div class="row mt-2">
             <div class="col">
@@ -104,7 +103,7 @@ Cari
                 <tr>
                 <td>3</td>
                 <td>
-                <img src="{{ asset('images/slide1.jpg') }}" alt="kategori 1"
+                <img src="{{ asset('asset/image/gambar3.jpg') }}" alt="kategori 1"
                 width='150px'>
                 <div class="row mt-2">
                 <div class="col">

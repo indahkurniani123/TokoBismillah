@@ -44,7 +44,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <a class="nav-link" href="{{ route('admin.kategori') }}">
+                            <a class="nav-link" href="{{ route('kategori.index') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-boxes"></i></div>
                                 Kategori
                             </a>
@@ -68,8 +68,8 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
-                        {{-- <h2>{{ $title }}</h2> --}}
+                        <h1 class="mt-4">{{ $tittle }}</h1>
+                        {{-- <h2>{{ $tittle }}</h2> --}}
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active"></li>
                             @yield('content')

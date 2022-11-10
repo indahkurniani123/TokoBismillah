@@ -14,7 +14,7 @@ class KategoriController extends Controller
     }
     public function create()
     {
-        $data = array('tittle' => 'Kategori Produk');
+        $data = array('tittle' => 'Form Kategori');
         return view('kategori.create', $data);
     }
 }

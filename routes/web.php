@@ -22,11 +22,14 @@ use App\Http\Controllers\TransaksiController;
 // Route group admin
 Route::group(['prefix' => '/admin'], function (){
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.admin');
-    Route::get('/kategori', [KategoriController::class, 'index'])->name('admin.kategori');
+
     //Route::group parent kategori
-        // Route::group(['prefix' => '/admin'], function (){
-        //     Route::get('/', [KategoriController::class, 'index'])->name('dashboard.admin');
-        // });
+        Route::group(['prefix' => '/kategori'], function (){
+            Route::get('/', [KategoriController::class, 'index'])->name('kategori.index');
+            Route::get('/create', [KategoriController::class, 'create'])->name('create.kategori');
+
+        });
+
     Route::get('/transaksi', [TransaksiController::class, 'index'])->name('admin.transaksi');
     Route::get('/laporan', [LaporanController::class, 'index'])->name('admin.laporan');
 });
