@@ -64,7 +64,7 @@ Cari
         <td>Baju Anak</td>
         <td>12 Produk</td>
         <td>
-        <a href="#" class="btn btn-sm
+        <a href="{{ route('edit.kategori') }}" class="btn btn-sm
         btn-primary mr-2 mb-2">
         Edit
         </a>
