@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LatihanController;
 use App\Http\Controllers\HomepageController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,8 +41,31 @@ Route::group(['prefix' => '/admin'], function (){
             Route::get('/show', [ProdukController::class, 'show'])->name('show.produk');
 
         });
+    //Route::group customer
+        Route::group(['prefix' => '/customer'], function (){
+            Route::get('/', [CustomerController::class, 'index'])->name('index.customer');
+            // Route::get('/create', [CustomerController::class, 'create'])->name('create.customer');
+            Route::get('/edit', [CustomerController::class, 'edit'])->name('customer.edit');
+            // Route::get('/show', [CustomerController::class, 'show'])->name('show.customer');
 
-    Route::get('/transaksi', [TransaksiController::class, 'index'])->name('admin.transaksi');
+        });
+    //Route::group transaksi
+        Route::group(['prefix' => '/transaksi'], function (){
+            Route::get('/', [TransaksiController::class, 'index'])->name('transaksi.index');
+            Route::get('/create', [TransaksiController::class, 'create'])->name('create.transaksi');
+            Route::get('/edit', [TransaksiController::class, 'edit'])->name('transaksi.edit');
+            Route::get('/show', [TransaksiController::class, 'show'])->name('transaksi.show');
+
+        });
+    //Route::group user
+        Route::group(['prefix' => '/user'], function (){
+            Route::get('/', [UserController::class, 'index'])->name('user.index');
+            Route::get('/setting', [UserController::class, 'setting'])->name('user.setting');
+            Route::get('/show', [UserController::class, 'show'])->name('user.show');
+
+        });
+
+    // Route::get('/transaksi', [TransaksiController::class, 'index'])->name('admin.transaksi');
     Route::get('/laporan', [LaporanController::class, 'index'])->name('admin.laporan');
 });
 
