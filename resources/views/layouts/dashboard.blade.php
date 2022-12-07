@@ -15,7 +15,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="#">Admin Store</a>
+            <a class="navbar-brand ps-3" href="#">Toko Bismillah</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -34,16 +34,93 @@
                 </li>
             </ul>
         </nav>
+
+
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
+
                             <div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="{{ route('dashboard.admin') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
+
+                            <a class="nav-link collapsed" href="{{ route('kategori.index') }}" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-boxes"></i></div>
+                                Produk
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route('kategori.index') }}">Kategori</a>
+                                    <a class="nav-link" href="{{ route('produk.index') }}">Produk</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="{{ route('transaksi.index') }}" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
+                                Transaksi
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route('transaksi.index') }}">Data Transaksi</a>
+                                    <a class="nav-link" href="#">Data</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link" href="#">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                              Customer
+                            </a>
+
+                            <a class="nav-link collapsed" href="{{ route('admin.laporan') }}" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Laporan
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route('admin.laporan') }}">Laporan Penjualan</a>
+                                    <a class="nav-link" href="#">Data</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link" href="{{ route('user.index') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                              Profil
+                            </a>
+
+                            <a class="nav-link" href="#">
+                                <div class="sb-nav-link-icon"><i class="fas fa-sign-out"></i></div>
+                              Logout
+                            </a>
+
+
+
+
+
+        {{-- <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+
+
+
+                            <li>
+                                <a class="nav-link" href="{{ route('dashboard.admin') }}">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                    Dashboard
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item dropdown">
                             <a class="nav-link" href="{{ route('kategori.index') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-boxes"></i></div>
                                 Kategori
@@ -63,7 +140,7 @@
                             <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-sign-out"></i></div>
                                 Logout
-                            </a>
+                            </a> --}}
 
                         </div>
                     </div>
@@ -73,7 +150,7 @@
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">{{ $tittle }}</h1>
-                        {{-- <h2>{{ $tittle }}</h2> --}}
+
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active"></li>
                             @yield('content')
