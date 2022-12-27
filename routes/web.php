@@ -65,8 +65,12 @@ Route::group(['prefix' => '/admin'], function (){
 
         });
 
-    // Route::get('/transaksi', [TransaksiController::class, 'index'])->name('admin.transaksi');
-    Route::get('/laporan', [LaporanController::class, 'index'])->name('admin.laporan');
+    // Route::group laporan
+    Route::group(['prefix' => '/laporan'], function (){
+    Route::get('/', [LaporanController::class, 'index'])->name('admin.laporan');
+    Route::get('/proses', [LaporanController::class, 'proses'])->name('laporan.proses');
+    });
+
 });
 
 //  Route UTS vs Referens Bu Eka
@@ -162,3 +166,19 @@ Route::get('/kategori', [HomepageController::class, 'kategori']);
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

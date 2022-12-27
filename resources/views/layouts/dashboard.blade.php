@@ -85,7 +85,7 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route('admin.laporan') }}">Laporan Penjualan</a>
-                                    <a class="nav-link" href="#">Data</a>
+                                    <a class="nav-link" href="{{ route('laporan.proses') }}">Data</a>
                                 </nav>
                             </div>
 
@@ -100,48 +100,6 @@
                             </a>
 
 
-
-
-
-        {{-- <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-
-
-
-                            <li>
-                                <a class="nav-link" href="{{ route('dashboard.admin') }}">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                    Dashboard
-                                </a>
-                            </li>
-
-
-                            <li class="nav-item dropdown">
-                            <a class="nav-link" href="{{ route('kategori.index') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-boxes"></i></div>
-                                Kategori
-                            </a>
-                            <a class="nav-link" href="{{ route('transaksi.index') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
-                                Transaksi
-                            </a>
-                            <a class="nav-link" href="{{ route('admin.laporan') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Laporan
-                            </a>
-                            <a class="nav-link" href="{{ route('user.index') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                Profil
-                            </a>
-                            <a class="nav-link" href="#">
-                                <div class="sb-nav-link-icon"><i class="fas fa-sign-out"></i></div>
-                                Logout
-                            </a> --}}
-
                         </div>
                     </div>
                 </nav>
@@ -149,7 +107,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">{{ $tittle }}</h1>
+                        <h1 class="mt-4"></h1>
 
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active"></li>
