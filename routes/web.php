@@ -23,7 +23,7 @@ use App\Http\Controllers\UserController;
 */
 
 // Route group admin
-Auth::routes();
+
 
 Route::get('', [HomePageController::class, 'index'])->name('page.home');
 
@@ -77,6 +77,30 @@ Route::group(['prefix' => '/admin'], function (){
 
 });
 
+Route::get('/dosen', function(){
+        return view ('dosen/index');
+    });
+Route::group(['prefix' => '/dosen', 'as'=> 'dosen.'], function(){
+    Route::get('/profil', function(){
+        return 'Halaman Profil Dosen';
+    })->name('profil');
+    Route::get('/ampu', function(){
+        return 'Halaman Data Mata Kuliah Yang Diampu';
+    })->name('ampu');
+
+});
+
+
+
+
+
+
+// Route::group(['prefix' => '/dosen'], function (){
+//     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.dosen');
+//     Route::get('/profil', [DosenController::class, 'profil'])->name('dosen.profil');
+//     Route::get('/pengampu', [DosenController::class, 'pengampu'])->name('dosen.pengampu');
+// });
+
 //  Route UTS vs Referens Bu Eka
 // Route::get('/mahasiswa', function(){
 //     return view ('mahasiswa/index');
@@ -95,29 +119,6 @@ Route::group(['prefix' => '/admin'], function (){
 //     })->name('nilai');
 
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -170,19 +171,3 @@ Route::get('/kategori', [HomepageController::class, 'kategori']);
 
 
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
