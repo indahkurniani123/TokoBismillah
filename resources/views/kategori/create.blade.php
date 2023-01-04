@@ -1,41 +1,67 @@
 @extends('layouts.dashboard')
 @section('content')
 <div class="container-fluid">
-<div class="row">
-<div class="col col-lg-12 col-md-6">
-<div class="card">
-<div class="card-header">
-<h3 class="card-title">Form Kategori</h3>
-<div class="card-tools">
+    <div class="row">
+        <div class="col col-lg-6 col-md-6">
+            <div class="card border-0 shadow rounded">
+                <div class="card-header bg-white">
+                    <h4 class="card-title"><strong>Tambah Kategori</strong></h4>
+                    <div class="card-tools">
+                        <a href="{{ route('kategori.index') }}" class="btn btn-sm btn-danger warna">Kembali</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form action="{{ route('kategori.index') }}" method="POST" enctype="multipart/form-data">
 
-<a href="{{ route('kategori.index') }}" class="btn btn-sm btn-danger"> Tutup </a>
-</div>
-</div>
-<div class="card-body">
-<form action="#">
-<div class="form-group">
-<label for="nama_kategori">Nama Kategori</label>
-<input type="text" name="nama_kategori" id="nama_kategori"
-class="form-control">
-</div>
-<div class="form-group">
-<label for="slug_kategori">Slug Kategori</label>
-<input type="text" name="slug_kategori" id="slug_kategori"
-class="form-control">
-</div>
-<div class="form-group">
-<label for="deskripsi">Deskripsi</label>
-<textarea name="deskripsi" id="deskripsi" cols="30" rows="5"
-class="form-control"></textarea>
-</div>
-<div class="form-group">
-<button type="submit" class="btn btn-primary">Simpan</button>
-<button type="reset" class="btn btn-warning">Reset</button>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
+                        @csrf
+
+                        <div class="form-group">
+                            <label class="font-weight-bold">Gambar</label>
+                            <input type="file" class="form-control @error('image') is-invalid @enderror"
+                                name="foto_kategori">
+
+                            @error('foto_kategori')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label class="font-weight-bold">Kode</label>
+                            <input type="text" class="form-control @error('title') is-invalid @enderror"
+                                name="kode_kategori" value="{{ old('kode_kategori') }}" placeholder="Masukkan Kode Kategori">
+
+                            @error('kode_kategori')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label class="font-weight-bold">Nama</label>
+                            <input type="text" class="form-control @error('title') is-invalid @enderror"
+                                name="nama_kategori" value="{{ old('nama_kategori') }}" placeholder="Masukkan Nama Kategori">
+
+                            @error('nama_kategori')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <button type="submit" class="btn btn-md btn-primary warna">Simpan</button>
+                        <button type="reset" class="btn btn-md btn-warning warna">Reset</button>
+                        <style>
+                            .warna {
+                                color: #ffffff;
+                            }
+                        </style>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

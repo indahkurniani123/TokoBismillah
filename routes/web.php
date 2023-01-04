@@ -23,14 +23,18 @@ use App\Http\Controllers\UserController;
 */
 
 // Route group admin
+Auth::routes();
+
+Route::get('', [HomePageController::class, 'index'])->name('page.home');
+
 Route::group(['prefix' => '/admin'], function (){
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.admin');
 
     //Route::group parent kategori
         Route::group(['prefix' => '/kategori'], function (){
             Route::get('/', [KategoriController::class, 'index'])->name('kategori.index');
-            Route::get('/create', [KategoriController::class, 'create'])->name('create.kategori');
-            Route::get('/edit', [KategoriController::class, 'edit'])->name('edit.kategori');
+            Route::get('/create', [KategoriController::class, 'create'])->name('kategori.create');
+            Route::get('/edit', [KategoriController::class, 'edit'])->name('kategori.edit');
 
         });
     //Route::group produk
