@@ -11,7 +11,7 @@
         <h2>Ini Halaman Dosen</h2>
         <a href="{{ route('dosen.profil') }}">Halaman v_profil</a>
         <br>
-        <a href="{{ route('dosen.ampu') }}">Halaman v_ampu</a>
+        <a href="{{ route('dosen.ampi') }}">Halaman v_ampu</a>
 
 
 </body>

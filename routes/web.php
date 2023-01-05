@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LatihanController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DosenController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\ProdukController;
@@ -82,12 +83,12 @@ Route::get('/dosen', function(){
     });
 Route::group(['prefix' => '/dosen', 'as'=> 'dosen.'], function(){
     Route::get('/profil', function(){
-        return 'Halaman Profil Dosen';
+        return view('dosen.v_profil');
     })->name('profil');
-    Route::get('/ampu', function(){
-        return 'Halaman Data Mata Kuliah Yang Diampu';
+    Route::get('/data_pengampu', function(){
+        return view('dosen.v_ampi');
     })->name('ampu');
-
+    // Route::resource('profil', DosenController::class);
 });
 
 
